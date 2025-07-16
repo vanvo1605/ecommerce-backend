@@ -1,0 +1,34 @@
+# ⛔ DO NOT track sensitive or temporary files
+
+# 🔐 Environment variables
+.env
+.env.*
+
+# 🗃️ Dependency folders
+node_modules/
+
+# 🏗️ Build output (React or other frontend)
+dist/
+build/
+
+# 🔧 Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 💾 Database (optional, if you use SQLite or dev-only DB files)
+*.sqlite
+*.db
+
+# 📦 Package locks (optional)
+package-lock.json
+yarn.lock
+
+# 💻 System files
+.DS_Store
+Thumbs.db
+
+# 🐳 Docker
+docker-compose.override.yml
