@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../db');
 
 // POST /messages
-router.post('/messages', async (req, res) => {
+router.post('/save', async (req, res) => {
   const { user_id, role, message } = req.body;
 
   if (!user_id || !role || !message) {

@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 //Chat message routes
-app.use('/api', messageRoutes);
+app.use('/api/messages', messageRoutes);
 
 // Start server
 app.listen(PORT, () => {
