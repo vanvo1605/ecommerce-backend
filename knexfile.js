@@ -39,7 +39,10 @@ module.exports = {
       password: process.env.DB_PASSWORD,
       port: process.env.DB_PORT, // DigitalOcean often uses custom ports
       ssl: { rejectUnauthorized: false } // Required for DigitalOcean
-    }
+    },
+    migrations: {
+      directory: './migrations'  // Make sure this path is correct
+    },
   }
 
 };
