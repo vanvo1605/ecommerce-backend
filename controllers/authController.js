@@ -16,7 +16,7 @@ const registerUser = async (req, res) => {
 
     const newUser = await pool.query(
       'INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING id, username, email',
-      [username, email, hashedPassword]
+      [username? username : "", email, hashedPassword]
     );
 
     res.status(201).json({ user: newUser.rows[0] });
