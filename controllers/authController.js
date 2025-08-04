@@ -12,11 +12,15 @@ const registerUser = async (req, res) => {
       return res.status(400).json({ message: 'Email already registered' });
     }
 
+    if (!username) {
+      username = email.split('@')[0]; // Default username to email prefix if not provided
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = await pool.query(
       'INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING id, username, email',
-      [username? username : "", email, hashedPassword]
+      [username, email, hashedPassword]
     );
 
     res.status(201).json({ user: newUser.rows[0] });
